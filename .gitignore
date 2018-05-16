@@ -330,6 +330,6 @@ ASALocalRun/
 .mfractor/
 
 #My addings
-.sln
-.vcxproj
-.filters
+*.sln
+*.vcxproj
+*.filters
