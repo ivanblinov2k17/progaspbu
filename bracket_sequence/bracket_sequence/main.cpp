@@ -1,11 +1,21 @@
-#include <iostream>
-using namespace std;
-int main(int argc, char** argv)
-{
-	if (argc != 2)
-	{
-		cerr << "You should enter only bracket sequence";
-		return 1;
-	}
+#define _CRT_SECURE_NO_WARNINGS
+#include "func.h"
 
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	freopen("input.txt", "rt", stdin);
+	freopen("output.txt", "wt", stdout);
+	string s;
+	cin >> s;
+	if (is_right_cons(s))
+		cout << "Right";
+	else
+		cout << "Not Right";
+	return 0;
 }
