@@ -17,5 +17,6 @@ int main()
 		cout << "Right";
 	else
 		cout << "Not Right";
+	system("pause");
 	return 0;
 }
