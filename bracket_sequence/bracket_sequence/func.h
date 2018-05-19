@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stack>
 #include <string>
-
-bool is_opening(const char& t);
+#include "../../../googletest-master/googletest/include/gtest/gtest.h"
+bool is_opening(char t);
 bool is_closing(const char& t);
 bool is_right_cons(std::string & s);

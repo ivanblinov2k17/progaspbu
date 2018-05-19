@@ -1,5 +1,5 @@
 #include "func.h"
-
+#include "../../../googletest-master/googletest/include/gtest/gtest.h"
 #include <iostream>
 #include <stack>
 #include <string>
@@ -28,9 +28,12 @@ bool is_right_cons(std::string & s)
 			}
 		}
 	}
-	return true;
+	if (temp.empty())
+		return true;
+	else
+		return false;
 }
-bool is_opening(const char& t)
+bool is_opening(char t)
 {
 	if (t == '(' || t == '{' || t == '[' || t == '<')
 		return true;
