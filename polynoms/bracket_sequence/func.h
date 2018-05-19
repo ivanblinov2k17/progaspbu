@@ -23,6 +23,7 @@ public:
 		int i = 0;
 		int temp = 0;
 		int temp2 = 0;
+		int tempL = 1;
 		size_t o;
 		while ((o = s.find(' ')) != std::string::npos)
 			s.erase(o, 1);
@@ -33,7 +34,15 @@ public:
 		{
 
 			if (s[i] == '+')
+			{
+				tempL = 1;
 				i++;
+			}
+			if (s[i] == '-')
+			{
+				tempL = -1;
+				i++;
+			}
 			if (s[i] >= '0'&&s[i] <= '9')
 			{
 				while (s[i] >= '0'&&s[i] <= '9')
@@ -41,6 +50,7 @@ public:
 					temp = temp * 10 + s[i] - 48;
 					i++;
 				}
+				temp = tempL*temp;
 			}
 
 			if (i < s.length())
@@ -135,11 +145,13 @@ public:
 					A.a.push_back(this->a[i] - _a.a[i]);
 		}
 		int temp = 0;
-		for (size_t i = 0; i < A.n; i++)
-		{
-			if (A.a[A.n - i - 1] == 0)
+		int j = 0;
+		if (A.n>1)
+			while (A.a[A.n - j - 1] == 0 && j < A.n)
+			{
 				temp++;
-		}
+				j++;
+			}
 		A.n-=temp;
 		return A;
 	}
@@ -157,6 +169,8 @@ public:
 	const polynom operator*(const polynom &_a)
 	{
 		polynom RES, TEMP;
+		if (this->n == 0 || _a.n == 0)
+			return polynom("0");
 		int temp = 0;
 		vector <int>::iterator it;
 		for (int temp = 0; temp < this->n; temp++)
@@ -184,6 +198,11 @@ public:
 		for (int i = 0; i < A.n; i++)
 		{
 			A.a.push_back(this->a[i] * _a);
+		}
+		if (_a == 0)
+		{
+			A.a.push_back(0);
+			A.n = 0;
 		}
 		return A;
 	}
