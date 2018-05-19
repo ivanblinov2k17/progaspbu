@@ -1,6 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "func.h"
-#include "../../../googletest-master/googletest/include/gtest/gtest.h"
 #include <iostream>
 #include <stack>
 #include <string>
@@ -17,6 +16,5 @@ int main()
 		cout << "Right";
 	else
 		cout << "Not Right";
-	system("pause");
 	return 0;
 }

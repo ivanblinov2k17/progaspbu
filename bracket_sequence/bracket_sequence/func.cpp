@@ -1,5 +1,4 @@
 #include "func.h"
-#include "../../../googletest-master/googletest/include/gtest/gtest.h"
 #include <iostream>
 #include <stack>
 #include <string>
@@ -41,7 +40,7 @@ bool is_opening(char t)
 		return false;
 }
 
-bool is_closing(const char& t)
+bool is_closing(char t)
 {
 	if (t == ')' || t == '}' || t == ']' || t == '>')
 		return true;
